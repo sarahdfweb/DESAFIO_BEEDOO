@@ -7,12 +7,13 @@
     
 <br>
 
-**Título**: Cadastrar Cursos  
+Título: Cadastrar Cursos  
 
 <br>
 Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa gerenciar os cursos disponíveis para os alunos.
 
-**Critérios de Aceitação**:
+
+## Critérios de Aceitação:
 <br>
 
 1. O formulário de cadastro de curso deve incluir os seguintes campos obrigatórios: Nome do curso, Descrição do curso, Instrutor, URL da imagem de capa, Data de início, Data de fim, Número de vagas e Tipo de curso.
@@ -169,7 +170,7 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
 Título: Visualização da Lista de Cursos
 Como um aluno, eu quero visualizar a lista de cursos disponíveis, para que eu possa ver os cursos que estão disponíveis para matrícula e obter informações sobre cada um deles.
 
-Critérios de Aceitação:
+## Critérios de Aceitação:
 
 A tela de lista de cursos deve exibir todos os cursos disponíveis.
 Cada curso deve exibir as seguintes informações:
@@ -205,8 +206,11 @@ Deve haver um botão de inscrição ao lado de cada curso para permitir que o al
    - Data de Início
    - Data de Fim
    - Quantidade de Vagas
-4. Clicar no botão de inscrição ao lado do "Curso A".
-5. Verificar se a inscrição foi realizada com sucesso e a página foi atualizada.
+4. Clicar no botão de exclusão ao lado do "Curso B".
+5. Confirmar a exclusão do curso.
+6. Verificar se o curso "Curso B" foi removido da lista e uma mensagem de sucesso é exibida.
+7. Clicar no botão de inscrição ao lado do "Curso A".
+8. Verificar se a inscrição foi realizada com sucesso e a página foi atualizada.
 
 **Dados de Teste**:
 - Cursos Disponíveis:
@@ -228,6 +232,9 @@ Deve haver um botão de inscrição ao lado de cada curso para permitir que o al
 - O botão de inscrição ao lado do "Curso A" está funcionando corretamente.
 - Após clicar no botão de inscrição, o usuário é inscrito no "Curso A" e a página é atualizada com uma mensagem de sucesso.
 - Ao visualizar um curso, todos os detalhes do curso são exibidos corretamente.
+- O botão de inscrição ao lado do "Curso A" está funcionando corretamente e a inscrição é realizada com sucesso.
+- O botão de exclusão ao lado do "Curso B" está funcionando corretamente e o curso é removido da lista.
+- Após a exclusão, a página é atualizada com uma mensagem de sucesso e o curso excluído não aparece mais na lista.
 
 **Resultado Real**: ()  
 **Status**: (Passou/Falhou)  
@@ -270,6 +277,15 @@ Contexto dos cenários: Dado que estou na página de listagem de cursos
     Então devo ver os detalhes completos do curso
     E esses detalhes devem incluir:
       | Nome do Curso | Descrição do Curso | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas |
+
+ Cenário 4: Exclusão de Curso com Sucesso
+    Dado que existem cursos na lista
+    Quando clico no botão de exclusão ao lado do "Curso B"
+    E confirmo a exclusão do curso
+    Então o curso "Curso B" deve ser removido da lista
+    E uma mensagem de sucesso deve ser exibida
+    E a lista de cursos deve ser atualizada sem o "Curso B"
+
 
 
 
