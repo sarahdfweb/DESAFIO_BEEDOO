@@ -81,7 +81,7 @@ Funcionalidade: Cadastrar Cursos
 
 Contexto dos cenários: Dado que estou na página de cadastro de curso
 
-  Cenário 1: Cadastro de Curso com Sucesso
+  Cenário 001: Cadastro de Curso com Sucesso
     Quando preencho todos os campos obrigatórios corretamente
       | Nome do curso        | Python                                                    |
       | Descrição do curso   | Seja um Desenvolvedor Web Profissional com Python e Django|
@@ -97,12 +97,12 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     E devo ser redirecionado para a página de listagem de cursos
     E uma mensagem de sucesso deve ser exibida
 
-  Cenário 2: Falha no Cadastro por Campos Obrigatórios em Branco
+  Cenário 002: Falha no Cadastro por Campos Obrigatórios em Branco
     Quando deixo todos os campos em branco
     E clico no botão "Cadastrar"
     Então mensagens de erro indicando que os campos são obrigatórios devem ser exibidas
 
-  Cenário 3: Falha no Cadastro por Limite de Caracteres no Nome do Curso
+  Cenário 003: Falha no Cadastro por Limite de Caracteres no Nome do Curso
     Quando preencho o campo "Nome do curso" com um texto de mais de 100 caracteres
       | Nome do curso |
       | Curso com nome muito longo que excede o limite de cem caracteres permitido no campo nome do curso |
@@ -110,7 +110,7 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     E clico no botão "Cadastrar"
     Então uma mensagem de erro indicando que o nome do curso não pode exceder 100 caracteres deve ser exibida
 
-  Cenário 4: Falha no Cadastro por URL da Imagem de Capa Inválida
+  Cenário 004: Falha no Cadastro por URL da Imagem de Capa Inválida
     Quando preencho o campo "URL da imagem de capa" com um texto não formatado como URL
       | https://creative-sherbet-a51eac.netlify.app/xxx   |
       | https://creative-sherbet-a51eac.netlify.app/yyyy |
@@ -118,7 +118,7 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     E clico no botão "Cadastrar"
     Então uma mensagem de erro indicando que a URL da imagem de capa não é válida deve ser exibida
 
-  Cenário 5: Falha no Cadastro por Datas Inválidas
+  Cenário 005: Falha no Cadastro por Datas Inválidas
     Quando preencho os campos "Data de início" e "Data de fim" com datas em formatos inválidos
       | Data de início | Data de fim |
       | 32/13/2024     | 45/09/2024  |
@@ -126,7 +126,7 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     E clico no botão "Cadastrar"
     Então mensagens de erro indicando que as datas devem estar no formato dd/mm/aaaa devem ser exibidas
 
-  Cenário 6: Falha no Cadastro por Número de Vagas Inválido
+  Cenário 006: Falha no Cadastro por Número de Vagas Inválido
     Quando preencho o campo "Número de vagas" com um valor não numérico ou negativo
       | Número de vagas |
       | -10             |
@@ -134,20 +134,25 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     E clico no botão "Cadastrar"
     Então uma mensagem de erro indicando que o número de vagas deve ser um número inteiro positivo deve ser exibida
 
-  Cenário 7: Uso do Botão "Limpar" para Data de Início
+  Cenário 007: Uso do Botão "Limpar" para Data de Início
     Quando preencho o campo "Data de início" e "Data fim" com "01/09/2024"
     E clico no botão "Limpar" no campo "Data de início" e "Data fim"
     Então o campo "Data de início" deve estar vazio
 
-  Cenário 8: Uso do Botão "Hoje" para Data de Início
+  Cenário 008: Uso do Botão "Hoje" para Data de Início
     Quando clico no botão "Hoje" no campo "Data de início" e "Data fim"
     Então o campo "Data de início" e "Data fim" deve ser preenchido com a data atual
 
-  Cenário 9: Seleção do Tipo de Curso
+  Cenário 009: Seleção do Tipo de Curso
     Quando seleciono "Online" no campo "Tipo de curso"
     Então o campo "Tipo de curso" deve estar preenchido com "Online"
 
-  Cenário 10: Cadastro de Curso com Sucesso e Verificação na Listagem
+
+Cenário 010: Link de inscrição
+    Quando digito o  "Link de incrição" inválido
+    Então deverá ser exibido uma mensagem de erro: "URL inválida"
+
+  Cenário 011: Cadastro de Curso com Sucesso e Verificação na Listagem
     Quando preencho todos os campos obrigatórios corretamente
       | Nome do curso        | Python                                       |
       | Descrição do curso   | Curso para testar o cadastro                |
@@ -244,7 +249,7 @@ Funcionalidade: Visualizar e Gerenciar Lista de Cursos
 
 Contexto dos cenários: Dado que estou na página de listagem de cursos
 
-  Cenário 1: Visualização e Ordenação dos Cursos
+  Cenário 012: Visualização e Ordenação dos Cursos
 
     Quando visualizo a lista de cursos
     Então devo ver todos os cursos disponíveis
@@ -253,7 +258,7 @@ Contexto dos cenários: Dado que estou na página de listagem de cursos
       | Curso Python       | Descrição do Curso A                        | Online        | 01/08/2024      | 31/08/2024   | 30                   |Denis    |
       | Curso QA           | Descrição do Curso B                        | Presencial    | 01/09/2024      | 30/09/2024   | 25                   |Sarah    |
   
- Cenário: Exclusão de Curso
+ Cenário 013: Exclusão de Curso
   Quando clico no botão "Excluir" ao lado de um curso
   Então o curso deve ser removido da lista
   E eu não devo ver mais o curso na lista de cursos
@@ -320,7 +325,7 @@ Funcionalidade: Acessar a Trilha de Acesso
 
 Contexto dos cenários: Dado que estou na página de listagem ou de cadastro de cursos
 
-  Cenário: Navegação entre as Telas de Cadastro e Listagem de Cursos
+  Cenário 014: Navegação entre as Telas de Cadastro e Listagem de Cursos
     Quando clico na trilha de acesso "Listar Cursos"
     Então sou direcionado para a página de listagem de cursos
 
