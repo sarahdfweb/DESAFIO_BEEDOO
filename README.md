@@ -70,7 +70,7 @@ Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa g
 
 <details><summary><b>🎯 Cenário de Teste em BDD Cadastro de Cursos</b></summary>
 
-```gherkin
+```
 Funcionalidade: Cadastrar Cursos
   Como um administrador do sistema
   Eu quero cadastrar cursos
@@ -166,44 +166,22 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     
 <br>
 
-**Título**: Lista de Cursos Cadastrados
-
-Como um aluno interessado, eu quero visualizar a lista de cursos disponíveis, para que eu possa escolher e me inscrever em um curso de meu interesse.
+Título: Visualização da Lista de Cursos
+Como um aluno, eu quero visualizar a lista de cursos disponíveis, para que eu possa ver os cursos que estão disponíveis para matrícula e obter informações sobre cada um deles.
 
 Critérios de Aceitação:
 
-A lista de cursos deve exibir todos os cursos disponíveis.
-Cada curso deve exibir as seguintes informações: Nome do Curso, Descrição do Curso, Instrutor, Tipo de Curso (Online ou Presencial).
-Os cursos devem ser ordenados alfabeticamente pelo Nome do Curso.
-Deve ser possível filtrar os cursos pelo Tipo (Online ou Presencial).
-Ao clicar no nome do curso, o usuário deve ser redirecionado para a página de detalhes do curso.
-Caso de Teste para Tela de Lista de Cursos
-Identificador: TC002
-Título: Visualizar Lista de Cursos
-Descrição: Verificar se a lista de cursos é exibida corretamente com todas as informações necessárias e funcionalidades de filtro.
-Pré-condições: O usuário deve estar logado e na página de lista de cursos.
-Passos:
+A tela de lista de cursos deve exibir todos os cursos disponíveis.
+Cada curso deve exibir as seguintes informações:
+Nome do Curso
+Descrição do Curso
+Tipo de Curso (Online ou Presencial)
+Data de Início
+Data de Fim
+Quantidade de Vagas
+Deve haver um botão de inscrição ao lado de cada curso para permitir que o aluno se inscreva no curso.
 
-Navegar até a página de lista de cursos.
-Verificar se todos os cursos disponíveis são exibidos.
-Verificar se cada curso exibe Nome do Curso, Descrição do Curso, Instrutor e Tipo de Curso.
-Verificar se os cursos estão ordenados alfabeticamente pelo Nome do Curso.
-Selecionar o filtro "Online" e verificar se apenas os cursos online são exibidos.
-Selecionar o filtro "Presencial" e verificar se apenas os cursos presenciais são exibidos.
-Clicar no nome de um curso e verificar se o usuário é redirecionado para a página de detalhes do curso.
-Dados de Teste:
 
-Tipos de cursos disponíveis: Online, Presencial
-Nome de um curso específico para verificação de redirecionamento: "Python"
-Resultado Esperado:
-
-A lista de cursos deve exibir todos os cursos disponíveis com as informações corretas.
-Os cursos devem estar ordenados alfabeticamente pelo Nome do Curso.
-Os filtros devem funcionar corretamente, exibindo apenas os cursos do tipo selecionado.
-O usuário deve ser redirecionado corretamente para a página de detalhes do curso ao clicar no nome do curso.
-Resultado Real: (A ser preenchido durante a execução do teste)
-Status: (Passou/Falhou)
-Notas/Comentários: (Qualquer observação adicional)
 
 </details>
 </details>
@@ -212,11 +190,86 @@ Notas/Comentários: (Qualquer observação adicional)
 
 <br>
 
+**Identificador**: TC002  
+**Título**: Visualização da Lista de Cursos com Detalhes e Ordenação  
+**Descrição**: Verificar se a lista de cursos é exibida corretamente com todas as informações necessárias. Também verificar a funcionalidade do botão de inscrição e a exibição dos detalhes do curso.  
+**Pré-condições**: O usuário deve estar logado e na página de listagem de cursos.
+
+**Passos**:
+1. Navegar até a página de listagem de cursos.
+2. Verificar se todos os cursos disponíveis são exibidos na lista.
+3. Verificar se cada curso exibe as seguintes informações:
+   - Nome do Curso
+   - Descrição do Curso
+   - Tipo de Curso (Online ou Presencial)
+   - Data de Início
+   - Data de Fim
+   - Quantidade de Vagas
+4. Clicar no botão de inscrição ao lado do "Curso A".
+5. Verificar se a inscrição foi realizada com sucesso e a página foi atualizada.
+
+**Dados de Teste**:
+- Cursos Disponíveis:
+  - Nome do Curso: "Curso A"
+  - Descrição do Curso: "Descrição do Curso A"
+  - Tipo de Curso: "Online"
+  - Data de Início: "01/08/2024"
+  - Data de Fim: "31/08/2024"
+  - Quantidade de Vagas: 30
+  - Nome do Curso: "Curso B"
+  - Descrição do Curso: "Descrição do Curso B"
+  - Tipo de Curso: "Presencial"
+  - Data de Início: "01/09/2024"
+  - Data de Fim: "30/09/2024"
+  - Quantidade de Vagas: 25
+
+**Resultado Esperado**:
+- Todos os cursos disponíveis são exibidos na lista com as informações completas.
+- O botão de inscrição ao lado do "Curso A" está funcionando corretamente.
+- Após clicar no botão de inscrição, o usuário é inscrito no "Curso A" e a página é atualizada com uma mensagem de sucesso.
+- Ao visualizar um curso, todos os detalhes do curso são exibidos corretamente.
+
+**Resultado Real**: ()  
+**Status**: (Passou/Falhou)  
+**Notas/Comentários**: (l)
+
+</details>
+
+
+
 </details>
 
 <details><summary><b>🎯 Cenário de Teste em BDD Listas de Cursos Cadastrados </b></summary>
 
-```gherkin
+```
+Funcionalidade: Visualização da Lista de Cursos
+  Como um aluno
+  Eu quero visualizar a lista de cursos disponíveis
+  Para que eu possa ver os cursos que estão disponíveis para matrícula e obter informações sobre cada um deles
+
+Contexto dos cenários: Dado que estou na página de listagem de cursos
+
+  Cenário 1: Visualização e Ordenação dos Cursos
+
+    Quando visualizo a lista de cursos
+    Então devo ver todos os cursos disponíveis
+    E cada curso deve exibir as seguintes informações:
+      | Nome do Curso      | Descrição do Curso                          | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas    |
+      | Curso Python       | Descrição do Curso A                        | Online        | 01/08/2024      | 31/08/2024   | 30                   |
+      | Curso QA           | Descrição do Curso B                        | Presencial    | 01/09/2024      | 30/09/2024   | 25                   |
+    E os cursos devem ser ordenados alfabeticamente pelo Nome do Curso
+
+  Cenário 2: Inscrição em Curso
+    Dado que existem cursos listados
+    Quando clico no botão de inscrição ao lado do "Curso A"
+    Então eu devo ser inscrito no "Curso A"
+    E a página deve atualizar para mostrar que a inscrição foi realizada com sucesso
+
+  Cenário 3: Visualização de Detalhes dos Cursos
+    Quando visualizo um curso na lista
+    Então devo ver os detalhes completos do curso
+    E esses detalhes devem incluir:
+      | Nome do Curso | Descrição do Curso | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas |
 
 
 
