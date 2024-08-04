@@ -286,6 +286,10 @@ Contexto dos cenários: Dado que estou na página de listagem de cursos
     E uma mensagem de sucesso deve ser exibida
     E a lista de cursos deve ser atualizada sem o "Curso B"
 
+```
+</details>
+
+
 
 
 
