@@ -16,7 +16,7 @@ Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa g
 ## Critérios de Aceitação:
 <br>
 
-1. O formulário de cadastro de curso deve incluir os seguintes campos obrigatórios: Nome do curso, Descrição do curso, Instrutor, URL da imagem de capa, Data de início, Data de fim, Número de vagas e Tipo de curso.
+1. O formulário de cadastro de curso deve incluir os seguintes campos obrigatórios: Nome do curso, Descrição do curso, Instrutor, URL da imagem de capa, Data de início, Data de fim, Número de vagas, Tipo de curso e Link de Inscrição.
 2. O campo "Nome do curso" deve permitir a inserção de até 100 caracteres.
 3. O campo "Descrição do curso" deve permitir a inserção de até 1000 caracteres.
 4. O campo "Instrutor" deve permitir a inserção de até 100 caracteres.
@@ -50,7 +50,8 @@ Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa g
 7. Preencher o campo "Data de fim" com "30/09/2024".
 8. Preencher o campo "Número de vagas" com "100".
 9. Selecionar "Online" no campo "Tipo de curso".
-10. Clicar no botão "Cadastrar".
+10. Link de Inscrição.
+11. Clicar no botão "Cadastrar".
 
 **Dados de Teste**:
 - Nome do curso: "Python"
@@ -61,6 +62,7 @@ Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa g
 - Data de fim: "30/09/2024"
 - Número de vagas: "100"
 - Tipo de curso: "Online"
+- URl da inscrição: https://creative-sherbet-a51eac.netlify.app/python
 
 **Resultado Esperado**: O curso é salvo com sucesso, o usuário é redirecionado para a página de listagem de cursos e uma mensagem de sucesso é exibida.  
 **Resultado Real**: ()  
@@ -82,13 +84,14 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
   Cenário 1: Cadastro de Curso com Sucesso
     Quando preencho todos os campos obrigatórios corretamente
       | Nome do curso        | Python                                                    |
-      | Descrição do curso   | Seja um Desenvolvedor Web Profissional com Python e Django |
+      | Descrição do curso   | Seja um Desenvolvedor Web Profissional com Python e Django|
       | Instrutor            | João Silva                                                |
       | URL da imagem de capa| https://creative-sherbet-a51eac.netlify.app/              |
       | Data de início       | 01/09/2024                                                |
       | Data de fim          | 30/09/2024                                                |
-      | Número de vagas      | 100                                                        |
+      | Número de vagas      | 100                                                       |
       | Tipo de curso        | Online                                                    |
+      | link de inscrição    | https://creative-sherbet-a51eac.netlify.app/python        |
     E clico no botão "Cadastrar"
     Então o curso deve ser salvo
     E devo ser redirecionado para a página de listagem de cursos
@@ -154,6 +157,7 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
       | Data de fim          | 30/09/2024                                  |
       | Número de vagas      | 100                                         |
       | Tipo de curso        | Online                                      |
+      |link de inscrição     |https://creative-sherbet-a51eac.netlify.app/python|
     E clico no botão "Cadastrar"
     Então o curso deve ser salvo
     E devo ser redirecionado para a página de listagem de cursos
@@ -167,92 +171,76 @@ Contexto dos cenários: Dado que estou na página de cadastro de curso
     
 <br>
 
-Título: Visualização da Lista de Cursos
-Como um aluno, eu quero visualizar a lista de cursos disponíveis, para que eu possa ver os cursos que estão disponíveis para matrícula e obter informações sobre cada um deles.
+Título: Visualizar e Gerenciar Lista de Cursos
+Como um administrador do sistema
+Eu quero visualizar e gerenciar a lista de cursos
+Para que eu possa ver os detalhes dos cursos disponíveis e realizar ações administrativas
 
 ## Critérios de Aceitação:
 
-A tela de lista de cursos deve exibir todos os cursos disponíveis.
-Cada curso deve exibir as seguintes informações:
-Nome do Curso
-Descrição do Curso
-Tipo de Curso (Online ou Presencial)
-Data de Início
-Data de Fim
-Quantidade de Vagas
-Deve haver um botão de inscrição ao lado de cada curso para permitir que o aluno se inscreva no curso.
-
-
+1. A lista de cursos deve exibir todos os cursos disponíveis.
+2. Cada curso deve exibir as seguintes informações:
+3. Nome do Curso
+4. Descrição do Curso
+5. Tipo de Curso
+6. Data de Início
+7. Data de Fim
+8. Quantidade de Vagas
+9. Instrutor
+10. Deve ser possível excluir um curso da lista.
 
 </details>
-</details>
+
 
 <details><summary><b>📋 Caso de Teste Listas de Cursos Cadastrados</b></summary>
 
 <br>
 
-**Identificador**: TC002  
-**Título**: Visualização da Lista de Cursos com Detalhes e Ordenação  
-**Descrição**: Verificar se a lista de cursos é exibida corretamente com todas as informações necessárias. Também verificar a funcionalidade do botão de inscrição e a exibição dos detalhes do curso.  
-**Pré-condições**: O usuário deve estar logado e na página de listagem de cursos.
+### Identificador: TC004
+**Título**: Visualização dos Cursos  
+**Descrição**: Verificar se a lista de cursos exibe todos os cursos disponíveis com os detalhes corretos.  
+**Pré-condições**: O administrador deve estar logado e na página de listagem de cursos.
 
 **Passos**:
 1. Navegar até a página de listagem de cursos.
-2. Verificar se todos os cursos disponíveis são exibidos na lista.
+2. Verificar se todos os cursos estão sendo exibidos.
 3. Verificar se cada curso exibe as seguintes informações:
-   - Nome do Curso
-   - Descrição do Curso
-   - Tipo de Curso (Online ou Presencial)
-   - Data de Início
-   - Data de Fim
-   - Quantidade de Vagas
-4. Clicar no botão de exclusão ao lado do "Curso B".
-5. Confirmar a exclusão do curso.
-6. Verificar se o curso "Curso B" foi removido da lista e uma mensagem de sucesso é exibida.
-7. Clicar no botão de inscrição ao lado do "Curso A".
-8. Verificar se a inscrição foi realizada com sucesso e a página foi atualizada.
+    - Nome do Curso
+    - Descrição do Curso
+    - Tipo de Curso
+    - Data de Início
+    - Data de Fim
+    - Quantidade de Vagas
+    - Instrutor
+    - Excluir
 
 **Dados de Teste**:
-- Cursos Disponíveis:
-  - Nome do Curso: "Curso A"
-  - Descrição do Curso: "Descrição do Curso A"
-  - Tipo de Curso: "Online"
-  - Data de Início: "01/08/2024"
-  - Data de Fim: "31/08/2024"
-  - Quantidade de Vagas: 30
-  - Nome do Curso: "Curso B"
-  - Descrição do Curso: "Descrição do Curso B"
-  - Tipo de Curso: "Presencial"
-  - Data de Início: "01/09/2024"
-  - Data de Fim: "30/09/2024"
-  - Quantidade de Vagas: 25
+- **Nome do Curso**: "Curso Python"
+- **Descrição do Curso**: "Descrição do Curso A"
+- **Tipo de Curso**: "Online"
+- **Data de Início**: "01/08/2024"
+- **Data de Fim**: "31/08/2024"
+- **Quantidade de Vagas**: "30"
+- **Instrutor**: "Denis"
+- **Botão**: "Excluir"
+
 
 **Resultado Esperado**:
-- Todos os cursos disponíveis são exibidos na lista com as informações completas.
-- O botão de inscrição ao lado do "Curso A" está funcionando corretamente.
-- Após clicar no botão de inscrição, o usuário é inscrito no "Curso A" e a página é atualizada com uma mensagem de sucesso.
-- Ao visualizar um curso, todos os detalhes do curso são exibidos corretamente.
-- O botão de inscrição ao lado do "Curso A" está funcionando corretamente e a inscrição é realizada com sucesso.
-- O botão de exclusão ao lado do "Curso B" está funcionando corretamente e o curso é removido da lista.
-- Após a exclusão, a página é atualizada com uma mensagem de sucesso e o curso excluído não aparece mais na lista.
+- A lista de cursos é exibida corretamente com todas as informações.
 
-**Resultado Real**: ()  
+**Resultado Real**: (A ser preenchido durante a execução do teste)  
 **Status**: (Passou/Falhou)  
-**Notas/Comentários**: (l)
-
-</details>
-
-
+**Notas/Comentários**: (Qualquer observação adicional)
 
 </details>
 
 <details><summary><b>🎯 Cenário de Teste em BDD Listas de Cursos Cadastrados </b></summary>
 
 ```
-Funcionalidade: Visualização da Lista de Cursos
-  Como um aluno
-  Eu quero visualizar a lista de cursos disponíveis
-  Para que eu possa ver os cursos que estão disponíveis para matrícula e obter informações sobre cada um deles
+Funcionalidade: Visualizar e Gerenciar Lista de Cursos
+  Como um administrador do sistema
+  Eu quero visualizar e gerenciar a lista de cursos
+  Para que eu possa ver os detalhes dos cursos disponíveis e realizar ações administrativas
 
 Contexto dos cenários: Dado que estou na página de listagem de cursos
 
@@ -261,35 +249,86 @@ Contexto dos cenários: Dado que estou na página de listagem de cursos
     Quando visualizo a lista de cursos
     Então devo ver todos os cursos disponíveis
     E cada curso deve exibir as seguintes informações:
-      | Nome do Curso      | Descrição do Curso                          | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas    |
-      | Curso Python       | Descrição do Curso A                        | Online        | 01/08/2024      | 31/08/2024   | 30                   |
-      | Curso QA           | Descrição do Curso B                        | Presencial    | 01/09/2024      | 30/09/2024   | 25                   |
-    E os cursos devem ser ordenados alfabeticamente pelo Nome do Curso
-
-  Cenário 2: Inscrição em Curso
-    Dado que existem cursos listados
-    Quando clico no botão de inscrição ao lado do "Curso A"
-    Então eu devo ser inscrito no "Curso A"
-    E a página deve atualizar para mostrar que a inscrição foi realizada com sucesso
-
-  Cenário 3: Visualização de Detalhes dos Cursos
-    Quando visualizo um curso na lista
-    Então devo ver os detalhes completos do curso
-    E esses detalhes devem incluir:
-      | Nome do Curso | Descrição do Curso | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas |
-
- Cenário 4: Exclusão de Curso com Sucesso
-    Dado que existem cursos na lista
-    Quando clico no botão de exclusão ao lado do "Curso B"
-    E confirmo a exclusão do curso
-    Então o curso "Curso B" deve ser removido da lista
-    E uma mensagem de sucesso deve ser exibida
-    E a lista de cursos deve ser atualizada sem o "Curso B"
+      | Nome do Curso      | Descrição do Curso                          | Tipo de Curso | Data de Início | Data de Fim | Quantidade de Vagas    |Instrutor|
+      | Curso Python       | Descrição do Curso A                        | Online        | 01/08/2024      | 31/08/2024   | 30                   |Denis    |
+      | Curso QA           | Descrição do Curso B                        | Presencial    | 01/09/2024      | 30/09/2024   | 25                   |Sarah    |
+  
+ Cenário: Exclusão de Curso
+  Quando clico no botão "Excluir" ao lado de um curso
+  Então o curso deve ser removido da lista
+  E eu não devo ver mais o curso na lista de cursos
 
 ```
 </details>
 
+<details><summary><b> 📒 User Story Trilha de Acesso </b></summary>
+    
+<br>
 
+Título: Gerenciar Cursos
+
+<br>
+
+Como um administrador do sistema, eu quero listar e cadastrar cursos, para que eu possa gerenciar as opções disponíveis para os alunos de forma eficiente.
+<br>
+
+## Critérios de Aceitação:
+
+1. O administrador deve ser capaz de acessar a página de acesso correspondente através da trilha de acesso.
+
+</details>
+
+</details>
+
+<details><summary><b>📋 Caso de Teste Trilha de Acesso</b></summary>
+
+### Identificador: TC008
+**Título**: Navegação via Trilha de Acesso  
+**Descrição**: Verificar se o administrador pode acessar as páginas de listagem e cadastro de cursos a partir das trilhas de acesso.  
+**Pré-condições**: O administrador deve estar logado no sistema e pode estar na página de listagem ou na página de cadastro de cursos.
+
+**Passos**:
+1. **Se estiver na página de listagem de cursos:**
+   - Clique na trilha de acesso "Cadastrar Cursos".
+   - Verifique se o administrador é direcionado para a página de cadastro de cursos.
+
+2. **Se estiver na página de cadastro de cursos:**
+   - Clique na trilha de acesso "Listar Cursos".
+   - Verifique se o administrador é direcionado para a página de listagem de cursos.
+
+**Dados de Teste**:
+- Não se aplica dados específicos para este caso de teste.
+
+**Resultado Esperado**:
+- Ao clicar na trilha de acesso "Listar Cursos" a partir da página de cadastro de cursos, o administrador deve ser direcionado para a página de listagem de cursos.
+- Ao clicar na trilha de acesso "Cadastrar Cursos" a partir da página de listagem de cursos, o administrador deve ser direcionado para a página de cadastro de cursos.
+
+**Resultado Real**: (A ser preenchido durante a execução do teste)  
+**Status**: (Passou/Falhou)  
+**Notas/Comentários**: (Qualquer observação adicional)
+
+
+</details>
+
+<details><summary><b>🎯 Cenário de Teste em BDD Trilha de Acesso </b></summary>
+    
+```
+Funcionalidade: Acessar a Trilha de Acesso
+  Como um administrador do sistema
+  Eu quero acessar a tela de cadastro ou de listar cursos 
+  Para que eu possa ver os detalhes dos cursos disponíveis e realizar ações administrativas
+
+Contexto dos cenários: Dado que estou na página de listagem ou de cadastro de cursos
+
+  Cenário: Navegação entre as Telas de Cadastro e Listagem de Cursos
+    Quando clico na trilha de acesso "Listar Cursos"
+    Então sou direcionado para a página de listagem de cursos
+
+    Quando clico na trilha de acesso "Cadastrar Cursos"
+    Então sou direcionado para a página de cadastro de cursos
+
+```
+</details>
 
 
 
