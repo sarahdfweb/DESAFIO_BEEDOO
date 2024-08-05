@@ -339,6 +339,50 @@ Contexto dos cenários: Dado que estou na página de listagem ou de cadastro de 
 
 📎 [Planilha de teste.xlsx](https://github.com/user-attachments/files/16489253/Planilha.de.teste.xlsx)
 
+</details>
+
+<details><summary><b>🐞 Bugs</b></summary>
+    
+### Erro de exclusão
+ 
+Descrição do Erro
+   
+Código do Erro: 405 
+
+Mensagem: Method Not Allowed
+Contexto: Ocorreu ao tentar excluir um curso.
+ 
+https://github.com/user-attachments/assets/21844cbc-f2ec-49c6-914a-ec57bd781f20
+
+
+### Permitindo cadastrar cursos com todo campo em branco
+
+Código do Erro: 404 
+
+Mensagem: O recurso solicitado não foi encontrado no servidor.
+Contexto: Ocorreu ao tentar cadastrar um curso com campos em branco
+
+
+
+https://github.com/user-attachments/assets/27e2082a-bd87-493e-b0b6-2b25fd8af9c4
+
+
+
+### Data inválida
+
+Aceitando datas idênticas de iníco e fim e inválida
+
+![image](https://github.com/user-attachments/assets/3254ad20-4c89-4e36-b0e6-bd0913fa4a53)
+
+
+https://github.com/user-attachments/assets/6098fa2b-cbe8-439c-a4e4-0faa3a843968
+
+
+
+
+
+
+
 
 
 
