@@ -377,10 +377,55 @@ Aceitando datas idênticas de iníco e fim e inválida
 
 https://github.com/user-attachments/assets/6098fa2b-cbe8-439c-a4e4-0faa3a843968
 
+### Relatório dos bugs
+
+📎[Relatório_Beedoo.docx](https://github.com/user-attachments/files/16489457/Relatorio_Beedoo.docx)
+
+
+</details>
+
+<details><summary><b>🧐Vunerabilidades </b></summary>
+
+
+
+## Vulnerabilidades Identificadas
+
+Durante os testes da funcionalidade de criação de cursos, foram encontrados os seguintes problemas:
+
+- **URLs Inválidas:** O sistema permite o cadastro de URLs inválidas, o que pode resultar em links quebrados.
+- **Formulário em Branco:** É possível cadastrar um curso mesmo sem preencher todos os campos obrigatórios, o que pode levar a dados incompletos.
+- **Validação de Dados:** O sistema não valida adequadamente os dados inseridos, permitindo informações incorretas.
+
+
+## Situação hipotética
+
+### Pontos Críticos a Esclarecer Antes dos Testes
+Antes de começar a testar a nova funcionalidade de cadastro de cursos, preciso  esclarecer os seguintes pontos com a equipe:
+
+1.Como os Dados Devem Ser Validados? Quais regras devem ser seguidas para garantir que as informações inseridas (como URLs e campos obrigatórios) estejam corretas?
+2.Como Deve Ser a Navegação? O processo de cadastro de cursos será dividido em etapas ou abas? Qual deve ser o fluxo de navegação para tornar o processo claro e organizado?
+3. O Que Fazer em Caso de Erros? Qual é o procedimento para lidar com erros durante o cadastro? Existe uma mensagem de erro padrão ou uma maneira específica de tratar falhas?
+
+### Próximos Passos
+* Conversar com a Equipe: Marcar uma reunião para discutir essas questões e garantir que todos os detalhes estejam claros.
+* Atualizar Documentação: Certificar-se de que todas as regras e detalhes sobre o cadastro estejam bem documentados.
+Preparar Testes: Criar e executar testes com base nas informações obtidas para garantir que tudo funcione conforme o esperado.
+
+### Como Saber se um Erro é Causado pela Nova Funcionalidade
+Testando Várias Vezes:
+
+Usando a nova funcionalidade várias vezes e vendo se o erro aparece sempre. Se o erro só aparece quando uso a nova função, é um sinal de que pode estar relacionado a ela.
+
+Compare com o Esperado:
+
+Vê se a nova funcionalidade está fazendo exatamente o que foi planejado. Se não estiver, o erro pode estar na nova funcionalidade.
+
+E preciso avisar a equipe sobre o erro e mostrando as evidências.
 
 
 
 
+</details>
 
 
 
