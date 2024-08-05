@@ -201,7 +201,7 @@ Para que eu possa ver os detalhes dos cursos disponíveis e realizar ações adm
 
 <br>
 
-### Identificador: TC004
+### Identificador: TC011
 **Título**: Visualização dos Cursos  
 **Descrição**: Verificar se a lista de cursos exibe todos os cursos disponíveis com os detalhes corretos.  
 **Pré-condições**: O administrador deve estar logado e na página de listagem de cursos.
@@ -287,7 +287,7 @@ Como um administrador do sistema, eu quero listar e cadastrar cursos, para que e
 
 <details><summary><b>📋 Caso de Teste Trilha de Acesso</b></summary>
 
-### Identificador: TC008
+### Identificador: TC014
 **Título**: Navegação via Trilha de Acesso  
 **Descrição**: Verificar se o administrador pode acessar as páginas de listagem e cadastro de cursos a partir das trilhas de acesso.  
 **Pré-condições**: O administrador deve estar logado no sistema e pode estar na página de listagem ou na página de cadastro de cursos.
