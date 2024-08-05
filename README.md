@@ -266,7 +266,7 @@ Contexto dos cenários: Dado que estou na página de listagem de cursos
 ```
 </details>
 
-<details><summary><b> 📒 User Story Trilha de Acesso </b></summary>
+<details><summary><b> 🚶‍♂️ User Story Trilha de Acesso </b></summary>
     
 <br>
 
