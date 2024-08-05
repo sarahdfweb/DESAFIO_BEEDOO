@@ -1,4 +1,5 @@
 
+
 # Desafio Beedoo QA <img src="https://github.com/sarahdfweb/especializacao_testes_software/assets/87348787/093003fa-5abe-466f-bd37-92796db5fc28" alt="ladybug-100" width="80">
 
 
