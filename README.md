@@ -65,8 +65,8 @@ Como um administrador do sistema, eu quero cadastrar cursos, para que eu possa g
 - URl da inscrição: https://creative-sherbet-a51eac.netlify.app/python
 
 **Resultado Esperado**: O curso é salvo com sucesso, o usuário é redirecionado para a página de listagem de cursos e uma mensagem de sucesso é exibida.  
-**Resultado Real**: ()  
-**Status**: (Passou/Falhou)  
+**Resultado Real**: ( O curso é salvo com sucesso, o usuário é redirecionado para a página de listagem de cursos)  
+**Status**: (Passou)  
 **Notas/Comentários**: ()
 
 </details>
@@ -309,7 +309,7 @@ Como um administrador do sistema, eu quero listar e cadastrar cursos, para que e
 - Ao clicar na trilha de acesso "Cadastrar Cursos" a partir da página de listagem de cursos, o administrador deve ser direcionado para a página de cadastro de cursos.
 
 **Resultado Real**: (A ser preenchido durante a execução do teste)  
-**Status**: (Passou/Falhou)  
+**Status**: (Passou)  
 **Notas/Comentários**: (Qualquer observação adicional)
 
 
